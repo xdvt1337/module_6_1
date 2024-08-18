@@ -8,10 +8,8 @@ class Animal:
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
-            self.fed = False
         else:
             print(f'{self.name} не стал есть {food.name}')
-            self.alive = True
 
 
 class Plant:
