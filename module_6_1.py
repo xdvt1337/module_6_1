@@ -1,4 +1,6 @@
 # Родительские классы:
+
+
 class Animal:
     def __init__(self, name):
         self.alive = True # Живой
@@ -8,14 +10,17 @@ class Animal:
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
+            self.fed = True
         else:
             print(f'{self.name} не стал есть {food.name}')
+            self.alive = False
 
 
 class Plant:
+    edible = False
+    
     def __init__(self, name):
-        self.edible = True # съедобность
-        self.name = name # индивидуальное название каждого растения
+        self.name = name
 
 
 
@@ -33,7 +38,7 @@ class Flower(Plant):
     pass
 
 class Fruit(Plant):
-    pass
+    edible = True
 
 # Проверка:
 a1 = Predator('Волк с Уолл-Стрит')
